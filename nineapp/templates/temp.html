@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax登陆验证</title>
+</head>
+<body>
+<h2>基于form表单的登陆验证</h2>
+<form action=""  method="post" enctype="application/x-www-form-urlencoded">{% csrf_token %}
+    用户名<input type="text" name="user">
+    密码<input type="text" name="pwd">
+    <input type="submit" value="提交">
+</form>
+<script src="https://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript">
+    $('#btn').click(function(){
+        $.ajax({
+             url:"",
+             type:post,
+             data:{
+                 'username':$('#user').val(),
+                 'password':$('#pwd').val()
+    },
+    success:function(data){
+                 console.log(data);
+                 var login_states=JSON.parse(data);
+                 console.log(login_states);
+                 if(login_states.user)
+                     location.href='主页'
+                 }else{
+                     $('#error_msg').html(login_states.erro_msg).css({'color':'red','
+                 }
+             }
+         })
+    })
+
+</script>
+
+</body>
+</html>

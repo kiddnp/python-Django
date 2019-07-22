@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户信息</title>
+<STYLE type="text/css">
+        #login{
+            width:400px;
+            height:280px;
+            position:absolute;
+            left: 50%;
+            top: 50%;
+            margin-left:-200px;
+            margin-top:-140px;
+            border:1px;
+            background-color:white;
+            align:center;
+
+}
+        #form{
+            width:300px;
+            height:160px;
+            position:relative;
+             left:50%;
+              top:50%;
+              margin-left:-150px;
+              margin-top:-80px;
+
+        }
+
+    </STYLE>
+
+</head>
+<body>
+    <h1>信息展示</h1>
+    <table>
+    <tr>
+        <th>用户名</th>
+        <th>密码</th>
+        <th>邮箱</th>
+        <th>手机号</th>
+    </tr>
+	    {% for line in people_list %}
+	    <tr>
+	        <td>{{line.username}}</td>
+	        <td>{{line.password}}</td>
+	        <td>{{line.email}}</td>
+	        <td>{{line.telphone}}</td>
+	    </tr>
+	    {% endfor %}
+    </table>
+</body>
+</html>

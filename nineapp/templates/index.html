@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html>
+<head> 
+<meta charset="UTF-8">
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/SimpleTree.css' %}"/>  
+<script type="text/javascript" src="{% static 'js/jquery-1.6.min.js' %}"></script>  
+<script type="text/javascript" src="{% static 'js/SimpleTree.js' %}"></script>  
+<script type="text/javascript">  
+$(function(){  
+    $(".st_tree").SimpleTree({  
+        click:function(a){  
+            if(!$(a).attr("hasChild"))  
+                pass;  
+        }  
+    });  
+});  
+</script>  
+</head>  
+<body>  
+  
+<div class="st_tree">  
+<ul>  
+    <li><a href="#">菜单导航</a></li>  
+    <li><a href="#" ref="xtgl">用户管理</a></li>  
+    <ul show="true">  
+        <li>
+        <a href="register/">添加用户</a>
+        </li>  
+        <li>
+        <a href="http://www.w3school.com.cn">修改用户</a>
+        </li>
+        <li>
+        <a href="#" ref="rzck">删除用户</a>
+        </li>  
+    </ul>  
+    <li><a href="#" ref="ckgl">学生信息管理</a></li>  
+    <ul>  
+        <li><a href="#" ref="kcgl">添加学生信息</a></li>  
+        <li><a href="#" ref="shgl">修改学生信息</a></li>  
+        <li><a href="#" ref="fhgl">查看学生信息</a></li>  
+        <ul>  
+            <li><a href="#" ref="yhgl">学生信息</a></li>  
+            <li><a href="#" ref="rzck">成绩信息</a></li>  
+        </ul>  
+    </ul>  
+</ul>  
+</div>
+</body> 
+</html>

@@ -1,0 +1,136 @@
+{% load static %}
+<!--
+$(this)	当前 HTML 元素
+$("p")	所有 <p> 元素
+$("p.intro")	所有 class="intro" 的 <p> 元素
+$(".intro")	所有 class="intro" 的元素
+$("#intro")	id="intro" 的元素
+$("ul li:first")	每个 <ul> 的第一个 <li> 元素
+$("[href$='.jpg']")	所有带有以 ".jpg" 结尾的属性值的 href 属性
+$("div#intro .head")	id="intro" 的 <div> 元素中的所有 class="head" 的元素
+-->
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="/static/js/jquery.js"></script>
+    <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>-->
+    <script type="text/javascript">
+$(document).ready(function(){
+  $("#hide").click(function(){
+  $("p").hide(1000);
+  });
+  $("#showe").dblclick(function(){
+  $("p").show();
+  });
+
+  $("#flip2").click(function(){
+    $("#panel2").slideDown(5000);
+  });
+  $("#stop2").click(function(){
+    $("#panel2").stop();
+  });
+
+  $(".flip").click(function(){
+    $(".panel").slideDown("slow");
+  });
+
+
+  $("#abc").click(function(){
+    $("#p2").css("color","blue").slideUp(2000).slideDown(2000).slideUp(2000).slideDown(2000);
+  });
+
+  $("#btn1").click(function(){
+    $("p.append").append(" <b>追加到最后</b>");
+  });
+
+  $("#btn2").click(function(){
+    $("ol").append("<li>增加一行</li>");
+  });
+
+  $("#remove").click(function(){
+    $("#div2").remove();
+  });
+
+  $("#clear").click(function(){           //先是id按钮
+    $("#div2").empty();                   //再是动作
+  });
+  $("#xx").click(function(){
+    $("p").remove(".nine");             //删除 class="nine" 的所有 <p> 元素
+  });
+
+});
+</script>
+
+<style type="text/css">
+div.panel,p.flip
+{
+margin:0px;
+padding:5px;
+text-align:center;
+background:#e5eecc;
+border:solid 1px #c3c3c3;
+}
+div.panel
+{
+height:120px;
+display:none;
+}
+#panel2,#flip2
+{
+padding:5px;
+text-align:center;
+background-color:#e5eecc;
+border:solid 1px #c3c3c3;
+}
+#panel2
+{
+padding:50px;
+display:none;
+}
+</style>
+</head>
+
+<body>
+<p id="p1">如果点击“隐藏”按钮，我就会消失。</p>
+<button id="hide" type="button">隐藏</button>
+<button id="showe" type="button">点两次显示</button>
+<div class="panel">
+<p>第二次JF</p>
+<p>第九次BC</p>
+</div>
+<p class="flip">请点击这里</p>
+<br />
+<button id="stop2">停止滑动</button>
+<div id="flip2">点击这里，向下滑动面板</div>
+<div id="panel2">Hello world!</div>
+<br />
+<p id="p2">上下来回抖动</p>
+<button id="abc">点击这里</button>
+<br />
+<br />
+<div style="color:#00FF00">
+<p class="append">内容1</p>
+<p>内容2</p>
+<ol>
+<li>列表1</li>
+<li>列表2</li>
+<li>列表3</li>
+</ol>
+<button id="btn1">追加文本</button>
+<button id="btn2">追加列表项</button>
+</div>
+<br />
+<br />
+<div id="div2" style="height:150px;width:300px;border:1px solid black;background-color:yellow;">
+    <p>888888888888888888888</p>
+    <p class="nine">999999999999999999999999</p>
+    <p class="nine">tttttttttttttttttttt</p>
+</div>
+<br>
+<button id="remove">删除 div2 元素</button>
+<button id="clear">清空 div 元素</button>
+<button id="xx">删除列表中某行</button>
+
+
+</body>
+</html>

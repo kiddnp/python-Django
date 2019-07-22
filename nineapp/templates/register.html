@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户注册</title>
+<STYLE type="text/css">
+        #login{
+            width:400px;
+            height:280px;
+            position:absolute;
+            left: 50%;
+            top: 50%;
+            margin-left:-200px;
+            margin-top:-140px;
+            border:1px;
+            background-color:white;
+            align:center;
+
+}
+        #form{
+            width:300px;
+            height:160px;
+            position:relative;
+             left:50%;
+              top:50%;
+              margin-left:-150px;
+              margin-top:-80px;
+
+        }
+
+    </STYLE>
+
+  </head>
+
+  <body>
+    <div id="login">
+        <div id="form">
+		    <form id='addForm' method="post"> {% csrf_token %}
+		     <div class="form-group">
+		        <label for="name">姓    名：</label>
+		        <input type="text" name="username" placeholder="请输入用户名" required/>
+		     </div>
+		     <div class="form-group">
+		        <label for="name">密    码：</label>
+		        <input type="password" name="password" placeholder="请输入密码" required/>
+		     </div>
+		     <div class="form-group">
+		        <label for="name">邮    箱：</label>
+		        <input type="mail" name="mail" placeholder="请输入邮箱地址" required/>
+		     </div>
+		     <div class="form-group">
+		        <label for="name">手机号：</label>
+		        <input type="phone" name="phone" placeholder="请输入正确的手机号" required/>
+		     </div>
+		     <div class="form-group">
+		        <label for="name">住    址：</label>
+		        <input type="address" name="address" placeholder="请输入你现在的住址" required/>
+		     </div>
+		        <input type="submit" value="提交"  align="right">
+		    </form>
+        </div>
+    </div>
+  </body>
+</html>
+
