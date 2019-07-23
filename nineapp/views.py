@@ -157,3 +157,6 @@ def ajaxForm(request):
 def temp3(request):
     return render(request, "temp2.html")
 
+def temp4(request):
+    return render(request, "temp3.html")
+
