@@ -26,6 +26,7 @@ urlpatterns = [
     url(r'^ajax/',views.ajax_temp),
     url(r'^host$', views.host),
     url(r'temp2/',views.temp3),
+    url(r'temp3/',views.temp4),
     url('ajaxForm/', views.ajaxForm)
 
 
